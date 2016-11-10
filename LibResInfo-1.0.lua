@@ -577,7 +577,9 @@ function eventFrame:RESURRECT_REQUEST(event, casterName)
 
 	local target = guidFromUnit.player
 	local endTime = GetTime() + RESURRECT_PENDING_TIME
-	hasPending[target] = endTime
+    if not target = nil then
+	    hasPending[target] = endTime
+    end
 
 	self:Show()
 
